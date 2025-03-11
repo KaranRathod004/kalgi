@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Key</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, black, #27013a);
+
+        }
+        form{
+            border: 1px solid white;
+            border-radius: 10px;
+            width: 25%;
+            height: 25%;
+            text-align: center;
+            padding-top: 5px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 25px;
+        }
+        h1{
+            color: white;
+        }
+        input{
+            border-radius: 5px;
+            height: 35px;
+            width: 90%;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            color: black;
+        }
+        button{
+            width: 30%;
+            height: 30px;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: transparent;
+            color: white;
+        }
+
+
+
+        @media (max-width: 800px){
+            form{
+                width: 75%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <form action="" method="post" onsubmit="check(event)">
+
+        <h1>Log in</h1>
+
+        <input type="password" name="key" placeholder="Enter Access Key" id="key"><br><br>
+        <button type="submit" onclick="check()">Log in</button>
+
+    </form>
+
+
+    <script>
+        function check(event) {
+            event.preventDefault();
+            var key = document.getElementById('key').value;
+            if (key === 'karan') {
+                localStorage.setItem('auth', 'true'); // store authentication flag in local storage
+                window.location.href = 'animation.html';
+            } else {
+                alert('incorrect');
+            }
+        }
+    </script>
+    
+</body>
+</html>

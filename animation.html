@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday</title>
+    <link rel="shortcut icon" href="cake.png">
+    <script>
+        window.onload = function() {
+            if (localStorage.getItem('auth') !== 'true') {
+                alert('Unauthorized access');
+                window.location.href = 'index.html';
+            }
+        };
+    </script>
+    <!-- <audio autoplay loop><source src="music.mp3" type="audio/mp3"></audio> -->
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      
+      .main{
+          width: 100vw;
+          height: 100vh;
+          background: linear-gradient(135deg, black, #27013a);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .a{
+          color: white;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation-name: move;
+          animation-duration: 5s;
+          animation-timing-function: ease;
+          animation-fill-mode: forwards;
+      }
+      
+      @keyframes move{
+          0%{
+              transform: translateY(-250%);
+              font-size: 25px;
+          }
+          50%{
+              transform: translateY(0);
+              font-size: 150px;
+          }
+          100%{
+              transform: translateY(0);
+              font-size: 150px;
+          }
+      }
+      
+      
+      @media (max-width:800px) {
+      
+          .a{
+              width: 100px;
+          }
+      
+          @keyframes move{
+              0%{
+                  transform: translateY(-250%);
+                  font-size: 25px;
+              }
+              50%{
+                  transform: translateY(0);
+                  font-size: 75px;
+              }
+              100%{
+                  transform: translateY(0);
+                  font-size: 75px;
+              }
+          }
+      }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="main">
+        <div class="a">Happy Birthday 🎂</div>
+    </div>
+
+
+
+
+
+    <script>
+        document.querySelector('.a').addEventListener('animationend', () => {
+            window.location.href = 'kalgi.html'; 
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('contextmenu', function(event) {
+          event.preventDefault();
+        });
+      </script>
+      
+      
+      
+      <script>
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+            event.preventDefault();
+          }
+        });
+      </script>
+    
+    
+</body>
+</html>
